@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "b1c592c4-baaf-4d4b-81d7-3a3c46fecda4",
+		"name": "Habitation Modules",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Talk to Aaron",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/aaronWoodward.mp3",
+					"protocol": "https",
+					"host": [
+						"lost-in-space-puzzle-hunt",
+						"s3",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"aaronWoodward.mp3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Surveillance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/surveillance",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"surveillance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Japan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/japan",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"japan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "United States",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/us",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"us"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Europe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/eu",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"eu"
+					]
+				},
+				"description": "Review Rules 1 through 3 to find the value for 🍄."
+			},
+			"response": []
+		},
+		{
+			"name": "The Russian Federation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/russia",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"russia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access Habitation Config",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/:japan/:us/:eu/:russ",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						":japan",
+						":us",
+						":eu",
+						":russ"
+					],
+					"variable": [
+						{
+							"key": "japan",
+							"value": "{{japan_answer}}"
+						},
+						{
+							"key": "us",
+							"value": "{{us_answer}}"
+						},
+						{
+							"key": "eu",
+							"value": "{{eu_answer}}"
+						},
+						{
+							"key": "russ",
+							"value": "{{russ_answer}}"
+						}
+					]
+				},
+				"description": "Aaron is busy making sure the habitation modules are in shape for the long journey home.\n\nWhen you're ready to submit the Habitation data, send it over as path variables under their respective countries."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://4d0c1c01-a3d2-45f5-bf3c-4361da46203f.mock.pstmn.io"
+		},
+		{
+			"key": "japan_answer",
+			"value": "iloveyou"
+		},
+		{
+			"key": "us_answer",
+			"value": "topsecret"
+		},
+		{
+			"key": "eu_answer",
+			"value": "9"
+		},
+		{
+			"key": "russ_answer",
+			"value": "2"
+		}
+	]
+}

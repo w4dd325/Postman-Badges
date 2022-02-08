@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "63463d37-1b7b-48dd-b3ad-5443a37ee1da",
+		"name": "Truss",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get note from Jacqueline",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{newBaseUrl}}/jacqueline",
+					"host": [
+						"{{newBaseUrl}}"
+					],
+					"path": [
+						"jacqueline"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access Truss Config",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"jacqueline_personal_code\", data.FIRST+data.SPECIALTY+data.SECTOR);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{newBaseUrl}}/:trust",
+					"host": [
+						"{{newBaseUrl}}"
+					],
+					"path": [
+						":trust"
+					],
+					"variable": [
+						{
+							"key": "trust",
+							"value": "{{jacqueline_personal_code}}"
+						}
+					]
+				},
+				"description": "Jacqueline is busy repairing the truss. It's very important because the truss holds the solar arrays, radiators, and robotic arm.\n\nWhen you're ready to submit the Truss data, send it over as a path variable for the key `trust`."
+			},
+			"response": []
+		},
+		{
+			"name": "{{newBaseUrl}}/files",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{newBaseUrl}}/files",
+					"host": [
+						"{{newBaseUrl}}"
+					],
+					"path": [
+						"files"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/famiglia_5136232.mp4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/famiglia_5136232.mp4",
+					"protocol": "https",
+					"host": [
+						"lost-in-space-puzzle-hunt",
+						"s3",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"famiglia_5136232.mp4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/sono-6464629.mp4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/sono-6464629.mp4",
+					"protocol": "https",
+					"host": [
+						"lost-in-space-puzzle-hunt",
+						"s3",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"sono-6464629.mp4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/lsd.png",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/lsd.png",
+					"protocol": "https",
+					"host": [
+						"lost-in-space-puzzle-hunt",
+						"s3",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"lsd.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/expense.png",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/expense.png",
+					"protocol": "https",
+					"host": [
+						"lost-in-space-puzzle-hunt",
+						"s3",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"expense.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/email-1.png",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/email-1.png",
+					"protocol": "https",
+					"host": [
+						"lost-in-space-puzzle-hunt",
+						"s3",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"email-1.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/email-2.png",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/email-2.png",
+					"protocol": "https",
+					"host": [
+						"lost-in-space-puzzle-hunt",
+						"s3",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"email-2.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/email-3.png",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/email-3.png",
+					"protocol": "https",
+					"host": [
+						"lost-in-space-puzzle-hunt",
+						"s3",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"email-3.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/personnel.csv",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/personnel.csv",
+					"protocol": "https",
+					"host": [
+						"lost-in-space-puzzle-hunt",
+						"s3",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"personnel.csv"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "newBaseUrl",
+			"value": "https://e8999dc0-f21a-453b-b14b-0e497f8eb0b7.mock.pstmn.io"
+		},
+		{
+			"key": "jacqueline_personal_code",
+			"value": ""
+		}
+	]
+}

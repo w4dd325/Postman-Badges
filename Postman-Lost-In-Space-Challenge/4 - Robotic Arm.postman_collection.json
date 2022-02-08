@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "afc0c155-23cb-48fc-9599-094634b366c3",
+		"name": "Robotic Arm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Videos",
+			"item": [
+				{
+					"name": "Quadrant 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let template = `",
+									"    <video width=\"500\" controls>",
+									"        <source src=\"https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/video-1.mp4\" type=\"video/mp4\">",
+									"    </video>",
+									"`",
+									"pm.visualizer.set(template, {})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://postman-echo.com/patch",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"patch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Quadrant 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let template = `",
+									"    <video width=\"500\" controls>",
+									"        <source src=\"https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/video-2.mp4\" type=\"video/mp4\">",
+									"    </video>",
+									"`",
+									"pm.visualizer.set(template, {})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://postman-echo.com/put",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"put"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Quadrant 3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let template = `",
+									"    <video width=\"500\" controls>",
+									"        <source src=\"https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/video-3.mp4\" type=\"video/mp4\">",
+									"    </video>",
+									"`",
+									"pm.visualizer.set(template, {})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "OPTIONS",
+						"header": [],
+						"url": {
+							"raw": "https://postman-echo.com/options",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"options"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Quadrant 4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let template = `",
+									"    <video width=\"500\" controls>",
+									"        <source src=\"https://lost-in-space-puzzle-hunt.s3.us-west-1.amazonaws.com/video-4.mp4\" type=\"video/mp4\">",
+									"    </video>",
+									"`",
+									"pm.visualizer.set(template, {})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://postman-echo.com/delete",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get note from Blake",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{newBaseUrl}}/blake",
+					"host": [
+						"{{newBaseUrl}}"
+					],
+					"path": [
+						"blake"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access Robotic Arm Config",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{newBaseUrl}}/:robotic",
+					"host": [
+						"{{newBaseUrl}}"
+					],
+					"path": [
+						":robotic"
+					],
+					"variable": [
+						{
+							"key": "robotic",
+							"value": "{{code}}"
+						}
+					]
+				},
+				"description": "Blake is under a lot of stress. We will need the robotic arm to be in working condition to move people, parts, and spacecraft.\n\nWhen you're ready to submit the Robotic Arm data, send it over as a path variable for the key `robotic`."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "newBaseUrl",
+			"value": "https://e8999dc0-f21a-453b-b14b-0e497f8eb0b7.mock.pstmn.io"
+		},
+		{
+			"key": "code",
+			"value": "258"
+		}
+	]
+}

@@ -1,0 +1,10 @@
+<img src=""
+width="200"
+height="200" />
+# Lost In Space
+- Get instructions: Fork the Read Me First collection to your own workspace. Share your work in a team or public workspace so others can review issues.
+- Review the mission: Send the API call in the collection for instructions on how to collect the clues.
+- Submit the final solution: When you think you've gathered all the data, validate your solution by providing the required information to Mission Control.
+- Claim your badge: Successfully completing the mission allows you to join the leaderboard and claim your Lost in Space Postman badge.
+
+https://badgr.com/public/badges/hkQxukdrTd6bEw9RT4MQcQ

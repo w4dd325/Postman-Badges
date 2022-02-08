@@ -1,0 +1,348 @@
+{
+	"info": {
+		"_postman_id": "f81a645e-055f-434c-a485-1f9efd0dc02c",
+		"name": "1: 📓 Read Me First",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send this call",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/readme",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"readme"
+					]
+				},
+				"description": "Hit **Send** to receive your instructions."
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/hints",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/hints",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"hints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/habitation-1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/habitation-1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"habitation-1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/habitation-2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/habitation-2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"habitation-2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/habitation-3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/habitation-3",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"habitation-3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/habitation-4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/habitation-4",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"habitation-4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/radiators-1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/radiators-1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"radiators-1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/radiators-2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/radiators-2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"radiators-2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/radiators-3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/radiators-3?JSESSIONID=612e3574cd18b305",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"radiators-3"
+					],
+					"query": [
+						{
+							"key": "JSESSIONID",
+							"value": "612e3574cd18b305"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/radiators-4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/radiators-4",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"radiators-4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/robotic-1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/robotic-1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"robotic-1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/robotic-2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/robotic-2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"robotic-2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/solar-1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/solar-1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"solar-1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/solar-2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/solar-2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"solar-2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/solar-3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/solar-3",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"solar-3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/solar-4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/solar-4",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"solar-4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/truss-1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/truss-1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"truss-1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/truss-2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/truss-2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"truss-2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://4d0c1c01-a3d2-45f5-bf3c-4361da46203f.mock.pstmn.io"
+		}
+	]
+}

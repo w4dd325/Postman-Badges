@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "45af0883-d930-4877-bc0b-692b7ed7b5a8",
+		"name": "Radiators",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get note from Garvey",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{newBaseUrl}}/garvey",
+					"host": [
+						"{{newBaseUrl}}"
+					],
+					"path": [
+						"garvey"
+					]
+				},
+				"description": "Unfortunately, Garvey is too busy repairing the radiators. It's very important to get rid of heat from the solar arrays and modules to keep things cool.\n\nBut he left you note with some helpful information."
+			},
+			"response": []
+		},
+		{
+			"name": "Access Radiators Config",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"encryptedPassphrase\",btoa(\"Improve operations by leveraging search and security warnings\"));"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{newBaseUrl}}/:encryptedPassphrase",
+					"host": [
+						"{{newBaseUrl}}"
+					],
+					"path": [
+						":encryptedPassphrase"
+					],
+					"variable": [
+						{
+							"key": "encryptedPassphrase",
+							"value": "{{encryptedPassphrase}}"
+						}
+					]
+				},
+				"description": "Garvey is very busy repairing the radiators. It's very important to get rid of heat from the solar arrays and modules to keep things cool. He left you a message with some helpful information.\n\nWhen you're ready to submit the Radiators data, send it over as a path variable for `encryptedPassphrase`."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "newBaseUrl",
+			"value": "https://e8999dc0-f21a-453b-b14b-0e497f8eb0b7.mock.pstmn.io"
+		},
+		{
+			"key": "message",
+			"value": ""
+		},
+		{
+			"key": "encryptedPassphrase",
+			"value": ""
+		}
+	]
+}

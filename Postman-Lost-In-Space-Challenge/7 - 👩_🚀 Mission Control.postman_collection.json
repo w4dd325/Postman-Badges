@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "71d2a7ce-6179-4d8d-b3f9-f127d09d18c9",
+		"name": "👩‍🚀 Mission Control",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Enter configuration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{newBaseUrl}}/:habitation/:radiators/:robotic/:solar/:truss",
+					"host": [
+						"{{newBaseUrl}}"
+					],
+					"path": [
+						":habitation",
+						":radiators",
+						":robotic",
+						":solar",
+						":truss"
+					],
+					"variable": [
+						{
+							"key": "habitation",
+							"value": "{{habitation_config}}"
+						},
+						{
+							"key": "radiators",
+							"value": "{{radiators_config}}"
+						},
+						{
+							"key": "robotic",
+							"value": "{{robotic_config}}"
+						},
+						{
+							"key": "solar",
+							"value": "{{solar_config}}"
+						},
+						{
+							"key": "truss",
+							"value": "{{truss_config}}"
+						}
+					]
+				},
+				"description": "To complete the final task, submit configuration details retrieved from each of the system elements."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "newBaseUrl",
+			"value": "https://e8999dc0-f21a-453b-b14b-0e497f8eb0b7.mock.pstmn.io"
+		},
+		{
+			"key": "habitation_config",
+			"value": "mouseArmpitTea"
+		},
+		{
+			"key": "radiators_config",
+			"value": "3"
+		},
+		{
+			"key": "robotic_config",
+			"value": "soupLeafToe"
+		},
+		{
+			"key": "solar_config",
+			"value": "true"
+		},
+		{
+			"key": "truss_config",
+			"value": "shinyNoodlePins"
+		}
+	]
+}
