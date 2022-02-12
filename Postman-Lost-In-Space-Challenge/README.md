@@ -9,6 +9,7 @@ height="200" />
 
 https://badgr.com/public/badges/hkQxukdrTd6bEw9RT4MQcQ
 
+## Certificate of Completion:
 <img src="https://user-images.githubusercontent.com/86320001/153731344-ea5bcaae-464f-4a76-94fb-416d5c5651bb.PNG"
 width="950"
 height="700" />
