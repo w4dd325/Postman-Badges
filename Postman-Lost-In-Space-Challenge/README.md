@@ -8,3 +8,7 @@ height="200" />
 - Claim your badge: Successfully completing the mission allows you to join the leaderboard and claim your Lost in Space Postman badge.
 
 https://badgr.com/public/badges/hkQxukdrTd6bEw9RT4MQcQ
+
+<img src="https://user-images.githubusercontent.com/86320001/153731344-ea5bcaae-464f-4a76-94fb-416d5c5651bb.PNG"
+width="950"
+height="700" />
