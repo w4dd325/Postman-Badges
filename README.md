@@ -1,10 +1,5 @@
 # My Postman Badges...
-<img src="https://user-images.githubusercontent.com/86320001/152981861-f30f51af-56d0-475e-87bb-be9223b5f251.png"
-width="200"
-height="200" />
-<img src="https://user-images.githubusercontent.com/86320001/152979578-28c9a5e6-07ee-4324-8c64-d5d4aa343182.png"
-width="200"
-height="200" />
-<img src="https://user-images.githubusercontent.com/86320001/152981754-075ef79a-1a80-4ae6-81bd-b5d3864944f8.png"
-width="200"
-height="200" />
+
+| Lost In Space  | API Tester | API Adoption | API 101 |
+| ------------- | ------------- |-------------|-------------|
+| <img src="https://user-images.githubusercontent.com/86320001/180306411-5adb4925-ab52-41c2-a723-bcef08e33301.png" width="150" height="150" /> | <img src="https://user-images.githubusercontent.com/86320001/180306483-31a1aa09-a487-4109-a025-bea065816d73.png" width="150" height="150" /> | <img src="https://user-images.githubusercontent.com/86320001/180306488-e06e5c4d-8053-472f-a20c-610b9f152937.png" width="150" height="150" /> | <img src="https://user-images.githubusercontent.com/86320001/180306493-f2a7834b-f5fc-4362-b4dd-2f3956c256d6.png" width="150" height="150" /> |
