@@ -1,0 +1,791 @@
+{
+	"info": {
+		"_postman_id": "6723367f-c2fa-4519-af2b-5c7b6bb49469",
+		"name": "Galaxy API Adoption",
+		"description": "___This collection accompanies the Postman Galaxy API Adoption training session.___\n\nLearn how to build adoption for your API by working your way through this collection!\n\n__FORK the collection to create a copy in your own workspace.__\n\n* Start by opening the collection and expanding the `Learn adoption` folder, selecting the `Begin learning` request, and clicking **Send**.\n* When you get a response, open the **Visualize** tab and follow the instructions from there.\n\nWhen you're done working through the collection, open the `Complete submission` folder:\n\n* Follow the steps returned from the `Publish workspace` request to create a public workspace and update your profile.\n* Copy your collection link (**Share** &gt; **Get public link**) into the `Test collection` address, adding your profile link as the query parameter–**Send** to test your work for completion!\n\nWhen your submission is successfully processed you'll receive the [Postman API Adoption](https://badgr.com/public/badges/uKubW0DORXGQ_cBGqBUVlw) badge!",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18694725"
+	},
+	"item": [
+		{
+			"name": "Learn adoption",
+			"item": [
+				{
+					"name": "Begin learning",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/begin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"begin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get customer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"/*",
+									"var template = `",
+									"<h3>{{info.id}}</h3>",
+									"<img src=\"{{info.pic}}\" style=\"width:300px\"/>",
+									"<p>{{info.phrase}}</p>",
+									"<strong><em>Amount: {{info.num}}</em></strong>",
+									"<div style=\"color:#990000\">When you're done playing with the visualizer and want to return to the tutorial add <code>&#47;*</code> at the top and <code>*&#47;</code> at the end of the <strong>Tests</strong> code and <strong>Send</strong> again.</div>",
+									"`;",
+									"",
+									"pm.visualizer.set(template, {",
+									"    info: pm.response.json().data.record",
+									"});",
+									"",
+									"//collection completion tracking :)",
+									"pm.collectionVariables.set('visualized', true);",
+									"*/"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/record?id=xyz789",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"record"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "xyz789"
+								}
+							]
+						},
+						"description": "Retrieve a single customer.\n\n*To specify the customer you want to retrieve:*\n\n*   Add a **Query parameter** named `id`."
+					},
+					"response": [
+						{
+							"name": "Get customer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/record?id=xyz789",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"record"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "xyz789"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jun 2022 19:39:02 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4258"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"10a2-NUJrsWcjBwBvZOH444uLcxFpLx0\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"welcome\": \"You're using the API Adoption course! Check out the 'data' object below to see the values returned by this API request. Click **Visualize** to see the 'tutorial' guiding you through next steps - do this for every request in the collection!\",\n    \"data\": {\n        \"record\": {\n            \"id\": \"y0825Je5FK\",\n            \"phrase\": \"{{$randomCatchPhrase}}\",\n            \"pic\": \"![pic](https://assets.postman.com/postman-docs/postmanaut-collab.png)\",\n            \"num\": 37\n        }\n    },\n    \"tutorial\": {\n        \"title\": \"You retrieved a record!\",\n        \"intro\": \"This endpoint retrieves a single record from the database. The request specified a record ID using the query parameter. _The API doesn't really return the record with the id you specified, just a random record._ 🤫\",\n        \"steps\": [\n            {\n                \"note\": \"The request returned the following data:\",\n                \"raw_data\": {\n                    \"record\": {\n                        \"id\": \"y0825Je5FK\",\n                        \"phrase\": \"Grass-roots scalable secured line\",\n                        \"pic\": \"http://placeimg.com/640/480/people\",\n                        \"num\": 37\n                    }\n                }\n            },\n            {\n                \"note\": \"Aside from documentation, one of the best ways to help your users orient themselves with your API is to use meaningful request names. Although this API returns junk data, let's pretend it doesn't. At the top of the request tab, hover over the name `Get item` and click the little pencil icon to edit it. Give the request a more meaningful name of your choice, for example `Get customer` (Postman will autosave).\"\n            },\n            {\n                \"note\": \"#### Add descriptions\\n\\nWith the documentation for the request open on the right, you'll see that you can add a description for the request. Click the text-area with 'Make things easier...' etc in it and enter a request description. You can use markdown, for example:\",\n                \"js_code\": [\n                    \"Retrieve a single customer.\",\n                    \"\",\n                    \"_To specify the customer you want to retrieve:_\",\n                    \"* Add a **Query parameter** named `id`.\"\n                ]\n            },\n            {\n                \"note\": \"You can **Preview** to see the rendered markdown at any time. **Save** your description. Before you move on, also save the response, choosing **Save Response** &gt; **Save as example**–with the example also named `Get customer`, then return here and **Send** again.\"\n            },\n            {\n                \"note\": \"#### Dynamic examples\\n\\nTo make the response a little more interesting, we can use dynamic faker variables to generate random values whenever the example is generated. Back in the example you saved for `Get customer`, you can change the content of the example. Find and replace the value of the `data` &gt; `phrase` property with `{{$randomCatchPhrase}}` so that it looks like this: `\\\"phrase\\\": \\\"{{$randomCatchPhrase}}\\\",`\"\n            },\n            {\n                \"note\": \"When you start typing `{{$random`, you'll see that there are lots of different random variables which you can use to make your docs and demos more dynamic. **Save** the example as before. Check out the docs again, following the link to the complete version to see how the different examples render–you can select them from the drop-down list.\"\n            },\n            {\n                \"note\": \"#### Markdown elements\\n\\nYou can add links and images to your markdown. To try out an image, grab the URL for the `pic` property in the response JSON and include it in your request docs markdown using the following syntax, saving to see the rendered image:\",\n                \"js_code\": [\n                    \"![pic](https://assets.postman.com/postman-docs/postmanaut-collab.png)\"\n                ]\n            },\n            {\n                \"note\": \"Try a link also:\",\n                \"js_code\": [\n                    \"[Your website](https://postman.com)\"\n                ]\n            }\n        ],\n        \"next\": [\n            {\n                \"step\": \"You added request documentation, but you can also add information at collection and folder level. Providing a strong intro to your collection will give your users the best chance of getting started, including universal info such as auth requirements, and example uses cases / workflows.\"\n            },\n            {\n                \"step\": \"The collection had a description when you imported it, so let's edit the folder intsead. Click the **Learn adoption** folder on the left and open its docs on the right. Add something to the description there too like you did for the request, then come back to `Get customer`.\"\n            },\n            {\n                \"step\": \"You can use collections to share information about your APIs in a variety of ways as we'll see in this session. To see a preview of what your docs will look like if someone views them on the web outside Postman, **View complete collection documentation**, click **Publish** &gt; **Preview documentation** then navigate back here to `Get customer` using the browser back button.\"\n            },\n            {\n                \"step\": \"Open the next request `POST` `Add item` and hit **Send**.\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"{{$randomLoremWord}}\",\n  \"phrase\": \"{{$randomCatchPhrase}}\",\n  \"pic\": \"http://placeimg.com/640/480/cats\",\n  \"num\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/record",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"record"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add item",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"{{$randomLoremWord}}\",\n  \"phrase\": \"{{$randomCatchPhrase}}\",\n  \"pic\": \"http://placeimg.com/640/480/cats\",\n  \"num\": 10\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/record",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"record"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jun 2022 20:18:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1782"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"6f6-0xzWuPBjx/6hI7D5pFdFY23mQKk\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"welcome\": \"You're using the API Adoption course! Check out the 'data' object below to see the values returned by this API request. Click **Visualize** to see the 'tutorial' guiding you through next steps - do this for every request in the collection!\",\n    \"tutorial\": {\n        \"title\": \"You added a new record! \",\n        \"intro\": \"_You didn't really add a new record, this is just a demo endpoint.._ 🙈\",\n        \"data\": {\n            \"message\": \"Record added\"\n        },\n        \"steps\": [\n            {\n                \"note\": \"You've seen how collection level info such as auth renders in the documentation–remember that this collection also uses folders. Postman will automatically structure your docs using folders and the list of requests–clicking these lets users navigate through the information.\"\n            },\n            {\n                \"note\": \"When your users view the collection docs on the web inside a Postman workspace, they can click **Open Request** to go straight to a request from the description. You can send people links to all of these components inside a workspace and know that the viewer will arrive at whatever resource you want to share.\"\n            },\n            {\n                \"note\": \"Let's make the **Body** data a little more dynamic using faker variables. Replace the value of the `id` property with `{{$randomLoremWord}}` and the value of `phrase` with `{{$randomCatchPhrase}}` so that it looks something like this:\",\n                \"raw_data\": {\n                    \"id\": \"{{$randomLoremWord}}\",\n                    \"phrase\": \"{{$randomCatchPhrase}}\",\n                    \"pic\": \"http://placeimg.com/640/480/cats\",\n                    \"num\": 10\n                }\n            },\n            {\n                \"note\": \"Postman will generate these each time the docs are viewed or the request is sent.\"\n            }\n        ],\n        \"next\": [\n            {\n                \"step\": \"Before you move on, save the response to this request as an example like you did before by choosing **...** &gt; **Add example** &gt; **Save**, and come back here to the `POST` request.\"\n            },\n            {\n                \"step\": \"Next open the `PUT` `Update item` request and hit **Send**.\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update item",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"num\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/record?id=xyz789",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"record"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "xyz789"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update item",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"num\": 10\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/record?id=xyz789",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"record"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "xyz789"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jun 2022 20:19:23 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2025"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"7e9-WTUgnIStLduenilnNAcvus7b9Ro\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"welcome\": \"You're using the API Adoption course! Check out the 'data' object below to see the values returned by this API request. Click **Visualize** to see the 'tutorial' guiding you through next steps - do this for every request in the collection!\",\n    \"tutorial\": {\n        \"title\": \"You updated a record! ✅\",\n        \"intro\": \"_You didn't really update a record, this is just a demo endpoint.._ 🙈\",\n        \"data\": {\n            \"message\": \"Record updated\"\n        },\n        \"steps\": [\n            {\n                \"note\": \"You can share collections with your users in multiple ways–by publishing documentation / including a **Run in Postman** button on your site, publishing a template, or sharing from a public workspace. Your users can import collections from the button in your docs / site, or by forking from a workspace like you did at the start of the session.\"\n            },\n            {\n                \"note\": \"When you create a public workspace, users can see collections, requests, environments, and more _in context inside Postman–and you can create links to all of these_. In order to use a collection from a workspace, your audience will fork it into their own workspace where they can edit and send requests.\"\n            },\n            {\n                \"note\": \"The number of collection forks is an indicator of engagement with the resources in a public workspace. Users can also comment on your public workspace, and you can even accept pull requests to create an open source contribution pathway. 🚀\"\n            }\n        ],\n        \"next\": [\n            {\n                \"step\": \"> ✏️ If you just need to share a collection with someone, you can use the collection's public link–from the collection **Share** option, choosing **Get public link**, then generate or update the link and copy it. _Note that you will need to update the link each time you make a change to the collection as the link acts as a snapshot of the collection._ We are going to use this method to check your training session progress before you submit your collection to receive the API Adoption badge.. 👀\"\n            },\n            {\n                \"step\": \"Save the response to this request as an example like you did before, then open the `DEL` `Remove item` request and hit **Send**.\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/record/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"record",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "xyz789",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Remove item",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/record/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"record",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "xyz789",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jun 2022 20:19:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1062"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"426-O+PivYQBwlCifV+AaLnMIwR1gbw\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"welcome\": \"You're using the API Adoption course! Check out the 'data' object below to see the values returned by this API request. Click **Visualize** to see the 'tutorial' guiding you through next steps - do this for every request in the collection!\",\n    \"tutorial\": {\n        \"title\": \"You deleted a record! 🗑️\",\n        \"intro\": \"_You didn't really delete a record, this is just a demo endpoint.._ 😆\",\n        \"data\": {\n            \"message\": \"Record removed\"\n        },\n        \"steps\": [\n            {\n                \"note\": \"So far we have looked at how you can provide information to help your users onboard with your APIs, but you can also share collections and documentation privately with collaborators using team workspaces. Members can see your collections together with documentation, and can view docs from a web link.\"\n            },\n            {\n                \"note\": \"Next up we are going to use mock servers to return fake data instead of letting users hit a production API, and see some data visualizations on request responses.\"\n            }\n        ],\n        \"next\": [\n            {\n                \"step\": \"Save the response to this request as an example like you did before, then open the `Get list` request and hit **Send**.\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"/*",
+									"var template = `",
+									"<div style=\"width:500px\">",
+									"<canvas id=\"myChart\"></canvas>",
+									"</div>",
+									"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script> ",
+									"<script>",
+									"var ctx = document.getElementById('myChart');",
+									"pm.getData(function (err, value) {",
+									"    var myChart = new Chart(ctx, {",
+									"\t    type: 'pie',",
+									"    \tdata: {",
+									"    \t    labels: value.labels,",
+									"    \t\tdatasets: [{ ",
+									"\t    \t\tlabel: \"Percentages\",",
+									"\t    \t\tbackgroundColor: value.bgs,",
+									"\t    \t\tborderWidth: 2,",
+									"\t    \t\tdata: value.numbers",
+									"\t    \t}]",
+									"    \t},",
+									"        options: {",
+									"            responsive: true",
+									"        }",
+									"    });",
+									"});",
+									"</script>",
+									"<br/>",
+									"<div style=\"color:#990000\">When you're done playing with the visualizer and want to return to the tutorial add <code>&#47;*</code> at the top and <code>*&#47;</code> at the end of the <strong>Tests</strong> code and <strong>Send</strong> again.</div>",
+									"`;",
+									"let nums = pm.response.json().data.records.map(a => a.num);",
+									"let labs = pm.response.json().data.records.map(a => a.id);",
+									"let bgs = []; let i;",
+									"for(i=0; i<nums.length; i++)",
+									"    bgs.push(\"#\"+Math.floor(Math.random()*16777215).toString(16));",
+									"pm.visualizer.set(template, {",
+									"    info: pm.response.json().data.records,",
+									"    numbers: nums,",
+									"    labels: labs,",
+									"    bgs: bgs",
+									"});",
+									"",
+									"//collection completion tracking :)",
+									"pm.collectionVariables.set('visualized', true);",
+									"*/"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/records",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"records"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/records",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"records"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "Go to the first request labeled \"Begin learning\" and click the blue **Send** button! The following instructions will be in the response details.\n\nAdded some extra info."
+		},
+		{
+			"name": "Complete submission",
+			"item": [
+				{
+					"name": "Publish workspace",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/publish",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"publish"
+							]
+						},
+						"description": "Hit **Send** to find out how to publish your workspace and update your profile."
+					},
+					"response": []
+				},
+				{
+					"name": "Test collection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//request array",
+									"let requestArr = pm.response.json().item[0].item;",
+									"//collection vars",
+									"let collVars=pm.response.json().variable;",
+									"",
+									"//added docs",
+									"pm.test(\"Added request description\", () => {",
+									"    let descArr = requestArr.filter(value => value.request.description).map(value => value.request.description);",
+									"    console.log(descArr);",
+									"    pm.expect(descArr).to.have.length.of.above(0);",
+									"});",
+									"",
+									"//added examples",
+									"//request response [] not empty for at least one",
+									"pm.test(\"Added response examples\", () => {",
+									"    let egArr = requestArr.filter(value => value.response.length>0).map(value => value.response);",
+									"    console.log(egArr);",
+									"    pm.expect(egArr).to.have.length.of.above(0);",
+									"});",
+									"",
+									"//used dynamic vars",
+									"//check request body as they were automatically added to response",
+									"pm.test(\"Added dynamic variables to request body\", () => {",
+									"    let bodyArr = requestArr.filter(value => value.request.body).map(value => value.request.body.raw);",
+									"    pm.expect(bodyArr.join(' ').indexOf('{{$')).to.be.greaterThan(-1);",
+									"});",
+									"",
+									"//mocked, collection script sets a var when the send url includes 'mock.pstmn'",
+									"pm.test(\"Mocked requests\", () => {",
+									"    const mockVar = collVars.filter(m => m.key === \"mocked\"); ",
+									"    pm.expect(mockVar).to.have.length.greaterThan(0);",
+									"});",
+									"",
+									"//visualizer - get customer and get list uncommented out and ran at least once",
+									"pm.test(\"Ran visualizer\", () => {",
+									"    const visVar = collVars.filter(m => m.key === \"visualized\"); ",
+									"    pm.expect(visVar).to.have.length.greaterThan(0);",
+									"});",
+									"",
+									"//published workspace",
+									"pm.test(\"Published workspace (included in Headers 'workspace' param)\", () => {",
+									"    let params=pm.response.json().item[1].item[1].request.header[0];",
+									"    pm.expect(params.value).to.have.length.greaterThan(0);",
+									"    pm.expect(params.value).to.contain('postman.com');",
+									"    pm.expect(params.value).to.contain('/workspace');",
+									"});",
+									"",
+									"//visualizer output",
+									"var template = `",
+									"<h3>Complete and submit your collection</h3>",
+									"<p>",
+									"    Check out the Test Results to see if your collection is complete. Make sure you included the up to date collection link as the address for this request, and the URL for your public workspace in the request headers.",
+									"</p>",
+									"<p>",
+									"If you have any fails, look back through the requests or ask for support in the event chat or at community.postman.com/c/training.",
+									"</p>",
+									"<p>",
+									"When all of your tests pass, navigate to this form in your browser and include your collection link to get your badge and swag! bit.ly/submit-api-adoption",
+									"</p>",
+									"`;",
+									"pm.visualizer.set(template, {});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "workspace",
+								"value": "https://www.postman.com/galaxy-quest-996184/workspace/galaxy-api-adoption",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://www.getpostman.com/collections/790b79b73dca600f4ac5",
+							"protocol": "https",
+							"host": [
+								"www",
+								"getpostman",
+								"com"
+							],
+							"path": [
+								"collections",
+								"790b79b73dca600f4ac5"
+							]
+						},
+						"description": "Grab your collection link and test it:\n\n* Add the URL for your public workspace in the **Headers** as the value of the `workspace` header, make sure to **save** the request after adding the workspace URL.\n* Open the `Galaxy API Adoption` collection on the left\n* Click **Share**\n* Choose **Get public link**\n* **Get** or **Update** your link (_you will need to update it if you make any changes to the collection_)\n* Copy the link\n* Pop the link into the `Test collection` request address and **Save** the request\n* **Send** the request\n* Check out the **Test Results** to see if your collection is complete\n\nIf you are running into issue with the last test, make sure to the following:\n* Make sure your workspace and your profile is public\n* Make sure you have saved your request after adding the workspace URL to the header\n* Make sure to get a new public link to have the most up to date version.\n\n***When your collection is complete, fill out the form [bit.ly/submit-api-adoption](bit.ly/submit-api-adoption) including the link to it and we will process your submission for the API Adoption badge!***"
+					},
+					"response": []
+				}
+			],
+			"description": "Complete your submission for the **Galaxy API Adoption** badge using the two requests in this final folder:\n\n* **Send** the `Publish workspace` request and follow the instructions to update your profile and make your workspace public.\n* Add your public workspace link as `workspace` value in **Headers**. Get your collection public link from the collection **Share** control and pop it into the `Test collection` address. **Send** to check if your collection is ready for submission."
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "api_key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{auth_key}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"var template = `",
+					"    <!--showdown for converting md to html-->",
+					"    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js\"></script>",
+					"    <script type=\"text/javascript\">",
+					"        function getContent(orig){",
+					"            var converter = new showdown.Converter(), text = orig, html = converter.makeHtml(text);",
+					"            return html;",
+					"        }",
+					"    </script>",
+					"    ",
+					"    <!--syntax highlighting-->",
+					"    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css\">",
+					"    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js\"></script>",
+					"    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/googlecode.min.css\">",
+					"    ",
+					"    <!--generic styles-->",
+					"    <style type=\"text/css\">",
+					"    body { background-color: white; }",
+					"    #notes p, #next p {padding-left:20px; border-left:2px solid #0cbb52; }",
+					"    #notes blockquote p, #next blockquote p:not(:empty) { border-left: none; background-color: #FF6C3722; color: #FF6C37; padding: 10px; }",
+					"    #notes, #next {padding-right:20px;}",
+					"    img {max-width:600px; padding-left:20px; padding-bottom:20px;}",
+					"    h4 {color:#007f31;}",
+					"    #intro, #notes, #next {color:#2B3B41;}",
+					"    summary:focus {outline: none;}",
+					"    summary:hover {cursor: pointer;}",
+					"    summary {color:#FF6C37;}",
+					"    details {border: 1px solid #FF6C37; padding: 5px; margin-bottom:10px;}",
+					"    details div {padding-left: 15px;}",
+					"    </style>",
+					"",
+					"    <h3 style=\"color: {{status}}\">{{response.tutorial.title}}</h3>",
+					"    ",
+					"    <div id=\"intro\"></div>",
+					"",
+					"    <div id=\"notes\"></div>",
+					"    ",
+					"    {{#if response.tutorial.next}}",
+					"    <h4>Next</h4>",
+					"    <div id=\"next\"></div>",
+					"    {{/if}}",
+					"    ",
+					"    <script type=\"text/javascript\">",
+					"        if(\"{{response.tutorial.rip}}\".length>0)",
+					"            document.write(getContent(\"{{response.tutorial.rip}}\"));",
+					"    </script>",
+					"    ",
+					"    <script type=\"text/javascript\">",
+					"        if(\"{{response.tutorial.pic}}\".length>0)",
+					"            document.write(\"<img src='{{response.tutorial.pic}}' alt='postman steps'/>\");",
+					"    </script>",
+					"",
+					"    <!--content to process before rendering-->",
+					"    <script type=\"text/javascript\">",
+					"        pm.getData(function(error, data) {",
+					"            var tut = data.response.tutorial;",
+					"            if(tut){",
+					"                if(tut.steps){",
+					"                    var i; ",
+					"                    var infoArray = tut.steps;",
+					"                    var notes=\"<div id='notes'>\";",
+					"                    for(i=0; i<infoArray.length; i++){",
+					"                        notes+=getContent(infoArray[i].note);",
+					"                        if(infoArray[i].raw_data){",
+					"                            notes+=\"<pre style='padding-left:20px'><code class='json'>\"+JSON.stringify(infoArray[i].raw_data, null, 2)+\"</code></pre>\";",
+					"                        }",
+					"                        if(infoArray[i].js_code){",
+					"                            var c;",
+					"                            notes+=\"<pre style='padding-left:20px'><code class='js'>\";",
+					"                            for(c=0; c<infoArray[i].js_code.length; c++)",
+					"                                notes+=infoArray[i].js_code[c]+\"<br/>\";",
+					"                            notes+=\"</code></pre>\";",
+					"                        }",
+					"                        if(infoArray[i].ref_data){",
+					"                            notes+=\"<pre style='padding-left:20px'><code class='json'>\"+JSON.stringify(data.response[infoArray[i].ref_data], null, 2)+\"</code></pre>\";",
+					"                        }",
+					"                        if(infoArray[i].pic)",
+					"                            notes+=\"<img src='\"+infoArray[i].pic+\"' alt='postman steps'/>\";",
+					"                    }",
+					"                    notes+=\"</div>\"",
+					"                    document.getElementById(\"notes\").innerHTML=notes;",
+					"                }",
+					"                document.getElementById(\"intro\").innerHTML=getContent(tut.intro);",
+					"                if(tut.next){",
+					"                    var nextDiv=document.getElementById(\"next\");",
+					"                    var n;",
+					"                    var nextContent=\"\";",
+					"                    var nextArray=tut.next;",
+					"                    for(n=0; n<nextArray.length; n++){",
+					"                        nextContent+=getContent(nextArray[n].step);",
+					"                        if(nextArray[n].raw_data){",
+					"                            nextContent+=\"<pre style='padding-left:20px'><code class='json'>\"+JSON.    stringify(nextArray[n].raw_data, null, 2)+\"</code></pre>\";",
+					"                        }",
+					"                        if(nextArray[n].js_code){",
+					"                            var c;",
+					"                            nextContent+=\"<pre style='padding-left:20px'><code class='js'>\";",
+					"                            for(c=0; c<nextArray[n].js_code.length; c++)",
+					"                                nextContent+=nextArray[n].js_code[c];",
+					"                            nextContent+=\"</code></pre>\";",
+					"                        }",
+					"                        if(nextArray[n].pic)",
+					"                            nextContent+=\"<img src='\"+nextArray[n].pic+\"' alt='postman steps'/>\";",
+					"                    }",
+					"                    nextDiv.innerHTML=getContent(nextContent);",
+					"                }",
+					"            }",
+					"            hljs.initHighlighting();",
+					"        });",
+					"    </script>",
+					"`;",
+					"if (pm.response.headers.get(\"Content-Type\").includes(\"json\")) {",
+					"  pm.visualizer.set(template, {",
+					"    response: pm.response.json(),",
+					"    status: (\"\" + pm.response.code).startsWith(\"4\") ? \"#cc0000\" : \"#FF6C37\"",
+					"  });",
+					"} else if (pm.response.headers.get(\"Content-Type\").includes(\"html\")) {",
+					"  pm.visualizer.set(`{{info}}`, {",
+					"    info:",
+					"      \"Hmm this seems to be HTML and not JSON - you might have hit an invalid endpoint - undo your changes, or close the request without saving and try opening / sending it again!\"",
+					"  });",
+					"}",
+					"//check mocked",
+					"if((pm.request.url.toString()).indexOf('mock.pstmn')>-1) pm.collectionVariables.set('mocked', true);"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "{{prod-api}}"
+		},
+		{
+			"key": "prod-api",
+			"value": "galaxy-api-adoption.glitch.me"
+		},
+		{
+			"key": "backup-api",
+			"value": "galaxy-api-adoption.herokuapp.com"
+		},
+		{
+			"key": "mocked",
+			"value": ""
+		},
+		{
+			"key": "visualized",
+			"value": ""
+		}
+	]
+}
