@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/86320001/152979578-28c9a5e6-07ee-4324-8c64-d5d4aa343182.png"
+<img src="https://user-images.githubusercontent.com/86320001/180306148-323612bf-b9ee-4750-8a5c-6f806342e579.png"
 width="200"
 height="200" />
 # Postman API Adoption
